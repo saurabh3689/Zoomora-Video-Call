@@ -27,7 +27,10 @@ const io = connectToSocket(server);
 
 const PORT = process.env.PORT || 8000;
 app.set("port", PORT);
-app.use(cors());
+app.use(cors({
+  origin:"https://zoomora-video-call-1-front.onrender.com",
+  credientials:true;
+}));
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 
