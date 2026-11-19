@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 8000;
 app.set("port", PORT);
 app.use(cors({
   origin:"https://zoomora-video-call-1-front.onrender.com",
-  credientials:true;
+  credentials:true;
 }));
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
