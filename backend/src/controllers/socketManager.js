@@ -9,7 +9,7 @@ let timeOnline = {}
 export const connectToSocket = (server) => {
     const io = new Server(server, {
         cors: {
-            origin: "*",
+            origin: "https://zoomora-video-call-1-front.onrender.com",
             methods: ["GET", "POST"],
             allowedHeaders: ["*"],
             credentials: true
