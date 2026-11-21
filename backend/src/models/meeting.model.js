@@ -4,7 +4,11 @@ const meetingSchema = new Schema(
     {
         user_id: {type: String},
         meetingCode: {type: String, required: true},
-        date: {type: Date, default: Date.now, required: true}
+        date: {type: Date, default: Date.now, required: true},
+        transcript: {type: String, default: ""},
+        summary: {type: String, default: ""},
+        keyDecisions: [{type: String}],
+        actionItems: [{type: String}]
     }
 )
 

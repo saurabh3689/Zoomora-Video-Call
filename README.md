@@ -6,11 +6,13 @@ Zoomora is a full-stack real-time video conferencing web application built with 
 
 ## 🚀 Features
 
+- **AI Meeting Summary & Next Steps**: Automated post-call summary, key decisions, and action items generated with Google Gemini AI.
+- **Live AI Notes & Subtitles**: In-call real-time speech transcription and live subtitles directly in the browser.
 - **Real-Time Video & Audio**: Peer-to-peer audio and video streaming using WebRTC.
 - **Screen Sharing**: Easily share your screen with participants.
 - **In-Meeting Chat**: Send and receive instant messages during video calls.
-- **User Authentication**: Secure Sign-up, Login, and JWT/token authentication.
-- **Meeting History**: Track and view past meeting logs.
+- **User Authentication**: Secure Sign-up, Login, and token authentication.
+- **Meeting History**: Track past meetings and review full AI summaries and transcripts anytime.
 - **Guest Access**: Join a meeting directly without signing in.
 
 ---

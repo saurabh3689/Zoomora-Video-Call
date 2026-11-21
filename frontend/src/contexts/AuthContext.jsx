@@ -29,10 +29,17 @@ export const AuthProvider = ({children}) => {
               })
 
               if(request.status === HttpStatusCode.Created){
-                return request.data.message;
+                if (request.data && request.data.token) {
+                    localStorage.setItem("token", request.data.token);
+                    router("/home");
+                }
+                return request.data.message || "Registration Successful";
               }
 
         } catch(err) {
+             if (err.response && err.response.data && err.response.data.message) {
+                 throw new Error(err.response.data.message);
+             }
              throw err;  
         }
     };
@@ -86,9 +93,23 @@ export const AuthProvider = ({children}) => {
         }
     }
 
+    const saveMeetingSummary = async (meetingCode, transcript) => {
+        try {
+            let request = await client.post("/save_meeting_summary", {
+                token: localStorage.getItem("token"),
+                meeting_code: meetingCode,
+                transcript: transcript
+            });
+            return request.data;
+        } catch (e) {
+            console.error("Error saving meeting summary:", e);
+            throw e;
+        }
+    }
+
 
     const data = {
-        userData, setUserData, handleRegister, handleLogin,getHistoryOfUser,addToUserHistory
+        userData, setUserData, handleRegister, handleLogin, getHistoryOfUser, addToUserHistory, saveMeetingSummary
     };
 
     return(
